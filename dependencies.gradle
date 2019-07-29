@@ -1,0 +1,8 @@
+ext {
+    supportLibrariesVersion = "27.1.0"
+    constraintLayoutVer = "1.1.3"
+    retrofit2Version = "2.3.0"
+    dagger2Version = "2.11"
+    okHttpVersion = "3.8.1"
+    rxAndroid2Version = "2.0.1"
+}
