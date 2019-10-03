@@ -1,8 +1,6 @@
 package com.zhiyong.myapp.executor;
 
-import android.support.annotation.NonNull;
-
-import com.zhiyong.myapp.executor.ThreadExecutor;
+import androidx.annotation.NonNull;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;

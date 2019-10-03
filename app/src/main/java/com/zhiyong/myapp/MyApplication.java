@@ -1,7 +1,7 @@
 package com.zhiyong.myapp;
 
 import android.content.Context;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 
 import com.zhiyong.myapp.injection.component.ApplicationComponent;
 import com.zhiyong.myapp.injection.component.DaggerApplicationComponent;
