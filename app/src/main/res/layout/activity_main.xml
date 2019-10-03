@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context="com.zhiyong.myapp.ui.home.MainActivity">
+    tools:context="com.zhiyong.easy_attendance.ui.home.MainActivity">
 
     <FrameLayout
         android:id="@+id/container"
