@@ -2,11 +2,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.zhiyong.mynotes"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,14 +34,27 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.blankj:utilcode:$utilcodeVer"
+    implementation "com.afollestad.material-dialogs:core:${materialDialogVersion}"
+
+    // RxJava2/RxAndroid2 for reactive stream
+    implementation "io.reactivex.rxjava2:rxandroid:${rxAndroid2Version}"
+
+    // Dagger2 for Dependencies Injection
     implementation "com.google.dagger:dagger:${dagger2Version}"
     annotationProcessor "com.google.dagger:dagger-compiler:${dagger2Version}"
+
+    // Retrofit2 as HttpClient
     implementation "com.squareup.retrofit2:retrofit:${retrofit2Version}"
     implementation "com.squareup.retrofit2:converter-gson:${retrofit2Version}"
     implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofit2Version}"
     implementation "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
-    implementation "io.reactivex.rxjava2:rxandroid:${rxAndroid2Version}"
+
+    // ButterKnife to avoid findViewById for clean code
+    implementation "com.jakewharton:butterknife:${butterKnifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
+
+    // Log util
     implementation "com.jakewharton.timber:timber:$timberVersion"
-    implementation "com.blankj:utilcode:$utilcodeVer"
-    implementation "com.afollestad.material-dialogs:core:${materialDialogVersion}"
 }

@@ -1,11 +1,12 @@
 ext {
-    supportLibrariesVersion = "27.1.1"
+    supportLibrariesVersion = "28.0.0"
     constraintLayoutVer = "1.1.3"
     retrofit2Version = "2.3.0"
     dagger2Version = "2.11"
     okHttpVersion = "3.8.1"
-    rxAndroid2Version = "2.0.1"
+    rxAndroid2Version = "2.1.1"
     timberVersion = "4.6.0"
     utilcodeVer = "1.5.1"
     materialDialogVersion = "0.9.6.0"
+    butterKnifeVersion = "10.0.0"
 }
