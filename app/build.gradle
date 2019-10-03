@@ -59,4 +59,13 @@ dependencies {
 
     // Log util
     implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    // Qr code scanner
+    implementation "me.dm7.barcodescanner:zxing:$barcodeZXingVer"
+
+    // Rxpermissions2 for permission managements
+    implementation "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionVer@aar"
+
+    // Dimen text size
+    implementation "com.intuit.sdp:sdp-android:$sdpVer"
 }

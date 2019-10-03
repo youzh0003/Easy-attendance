@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ErrorTextStyle">
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:background">@color/red</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

@@ -9,4 +9,7 @@ ext {
     utilcodeVer = "1.5.1"
     materialDialogVersion = "0.9.6.0"
     butterKnifeVersion = "10.0.0"
+    barcodeZXingVer = "1.9.8"
+    rxPermissionVer = "0.9.4"
+    sdpVer = "1.0.4"
 }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">My Base App</string>
+    <string name="app_title">Easy Attendance</string>
     <string name="api_end_point">http://192.169.204.35/api/v1/</string>
+
+    <!-- qr -->
+    <string name="request_camera_permission">Permission is needed to capture qr code.</string>
 </resources>

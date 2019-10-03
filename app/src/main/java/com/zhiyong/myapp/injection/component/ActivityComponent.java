@@ -3,6 +3,7 @@ package com.zhiyong.myapp.injection.component;
 import com.zhiyong.myapp.ui.home.MainActivity;
 import com.zhiyong.myapp.injection.PerActivity;
 import com.zhiyong.myapp.injection.module.ActivityModule;
+import com.zhiyong.myapp.ui.qr.QRCodeRecognitionFragment;
 
 import dagger.Component;
 
@@ -15,4 +16,6 @@ import dagger.Component;
 
 public interface ActivityComponent {
     void inject(MainActivity activity);
+
+    void inject(QRCodeRecognitionFragment qrCodeRecognitionFragment);
 }
