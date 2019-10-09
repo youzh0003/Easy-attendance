@@ -57,6 +57,10 @@ dependencies {
     implementation "com.jakewharton:butterknife:${butterKnifeVersion}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
 
+    // ButterKnife RxBinding. eg. RxTextView.textChanges()
+    implementation "com.jakewharton.rxbinding2:rxbinding:${rxBindingVersion}"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${rxBindingVersion}"
+
     // Log util
     implementation "com.jakewharton.timber:timber:$timberVersion"
 
@@ -68,4 +72,13 @@ dependencies {
 
     // Dimen text size
     implementation "com.intuit.sdp:sdp-android:$sdpVer"
+
+    // Circle imageview
+    implementation "de.hdodenhof:circleimageview:$circleimageviewVer"
+
+    // Swipe to reveal view
+    implementation "com.chauthai.swipereveallayout:swipe-reveal-layout:$swipeRevealVer"
+
+    // Date time picker
+    implementation "com.wdullaer:materialdatetimepicker:$materialDateTimePickerVer"
 }

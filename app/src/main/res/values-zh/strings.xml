@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Easy Attendance</string>
+    <string name="app_title">Easy Attendance</string>
+    <string name="api_end_point">http://</string>
+
+    <!-- general -->
+    <string name="deleted">已删除</string>
+    <string name="message_get_groups_failed">获取群组失败</string>
+    <string name="delete">删除</string>
+    <string name="created">创建 !</string>
+    <string name="updated">更新 !</string>
+    <string name="cancel">取消</string>
+    <string name="register">登记</string>
+    <string name="name">名字</string>
+
+    <!-- qr -->
+    <string name="request_camera_permission">需要权限才能捕获二维码。</string>
+    <string name="search">搜索…</string>
+    <string name="message_unknow_user_detected">请先注册用户</string>
+    <string name="in">进</string>
+    <string name="out">出</string>
+
+    <!-- group -->
+    <string name="groups">群组</string>
+    <string name="message_delete_group_failed">删除组别失败</string>
+    <string name="update">更新</string>
+    <string name="error_name_empty">名称不能为空</string>
+    <string name="error_group_exist">这个群组名称已经存在</string>
+    <string name="message_create_group_failed">建立群组失败</string>
+    <string name="message_update_group_failed">更新组失败</string>
+    <string name="remark">备注</string>
+
+    <!-- record -->
+    <string name="records">记录</string>
+    <string name="message_report_generated_success">报告生成成功</string>
+    <string name="report_generated_failed">报告生成失败</string>
+    <string name="message_permission_denied">未经许可不得输出CSV</string>
+    <string name="message_get_records_failed">获取记录失败</string>
+    <string name="group">组</string>
+
+    <!-- person -->
+    <string name="users">用户</string>
+    <string name="message_get_uses_failed">读取用户失败</string>
+    <string name="error_id_empty">Id 不能为空</string>
+    <string name="error_use_exist">该用户ID已经存在</string>
+    <string name="message_create_user_failed">创建用户失败</string>
+    <string name="message_update_user_failed">更新用户失败</string>
+    <string name="id">ID</string>
+</resources>

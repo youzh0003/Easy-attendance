@@ -5,6 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
+import com.zhiyong.easy_attendance.executor.JobExecutor;
+import com.zhiyong.easy_attendance.executor.PostExecutionThread;
+import com.zhiyong.easy_attendance.executor.ThreadExecutor;
+import com.zhiyong.easy_attendance.executor.UIThread;
 import com.zhiyong.easy_attendance.injection.ApplicationContext;
 
 import javax.inject.Singleton;
@@ -39,5 +43,17 @@ public class ApplicationModule {
     @Singleton
     public SharedPreferences provideSharePreferences(){
         return PreferenceManager.getDefaultSharedPreferences(mApplication);
+    }
+
+    @Provides
+    @Singleton
+    ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
+        return jobExecutor;
+    }
+
+    @Provides
+    @Singleton
+    PostExecutionThread providePostExecutionThread(UIThread uiThread) {
+        return uiThread;
     }
 }

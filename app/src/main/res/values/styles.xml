@@ -34,4 +34,26 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:gravity">center_vertical</item>
     </style>
+
+    <style name="ToolbarHeaderMaxWidth">
+        <item name="android:minHeight">@dimen/_42sdp</item>
+    </style>
+
+    <style name="ToolbarHeader">
+        <item name="android:layout_marginStart">@dimen/_16sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_16sdp</item>
+        <item name="android:minHeight">@dimen/_42sdp</item>
+    </style>
+
+    <style name="ToolbarHeaderIcon">
+        <item name="android:layout_width">@dimen/_24sdp</item>
+        <item name="android:layout_height">@dimen/_24sdp</item>
+    </style>
+
+    <style name="ToolbarHeaderText">
+        <item name="android:textSize">@dimen/_18sdp</item>
+        <item name="android:minHeight">@dimen/_42sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:singleLine">true</item>
+    </style>
 </resources>

@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="text_size_small">@dimen/_9sdp</dimen>
+    <dimen name="text_size_medium">@dimen/_12sdp</dimen>
+    <dimen name="text_size_normal">@dimen/_14sdp</dimen>
+    <dimen name="text_size_large">@dimen/_18sdp</dimen>
+</resources>

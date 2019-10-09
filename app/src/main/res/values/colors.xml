@@ -10,4 +10,9 @@
 
     <color name="btn_in_color">#5cb85c</color>
     <color name="btn_out_color">#aaaaaa</color>
+    <color name="button_ok_color">#21b04c</color>
+    <color name="button_not_ok_color">#ed1c23</color>
+    <color name="button_cancel_color">#c3c3c3</color>
+    <color name="search_box_background">#e1e0e1</color>
+    <color name="line_separator">#CACACA</color>
 </resources>

@@ -9,42 +9,22 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class Record extends RealmObject implements Parcelable {
+    public static String DATE = "date";
+    public static String PERSON_GROUP_NAME = "person.group.name";
     @PrimaryKey
     @SerializedName("recordedAt")
     private Long recordedAt; // Timestamp in seconds
-    private String name;
+    private String date; // For filter
+    private Person person;
     private String type; // In/Out etc
 
     public Record() {
     }
 
-    public Record(Long recordedAt, String name, String type) {
+    public Record(Long recordedAt, String date, Person person, String type) {
         this.recordedAt = recordedAt;
-        this.name = name;
-        this.type = type;
-    }
-
-    public Long getRecordedAt() {
-        return recordedAt;
-    }
-
-    public void setRecordedAt(Long recordedAt) {
-        this.recordedAt = recordedAt;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
+        this.date = date;
+        this.person = person;
         this.type = type;
     }
 
@@ -54,7 +34,8 @@ public class Record extends RealmObject implements Parcelable {
         } else {
             recordedAt = in.readLong();
         }
-        name = in.readString();
+        date = in.readString();
+        person = in.readParcelable(Person.class.getClassLoader());
         type = in.readString();
     }
 
@@ -66,13 +47,9 @@ public class Record extends RealmObject implements Parcelable {
             dest.writeByte((byte) 1);
             dest.writeLong(recordedAt);
         }
-        dest.writeString(name);
+        dest.writeString(date);
+        dest.writeParcelable(person, flags);
         dest.writeString(type);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
     }
 
     public static final Creator<Record> CREATOR = new Creator<Record>() {
@@ -86,4 +63,34 @@ public class Record extends RealmObject implements Parcelable {
             return new Record[size];
         }
     };
+
+    public Long getRecordedAt() {
+        return recordedAt;
+    }
+
+    public void setRecordedAt(Long recordedAt) {
+        this.recordedAt = recordedAt;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 }

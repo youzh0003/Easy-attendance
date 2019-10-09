@@ -21,8 +21,8 @@ import io.reactivex.subscribers.DisposableSubscriber;
  */
 public abstract class FlowableUseCase<T, Params> {
 
-    protected final ThreadExecutor threadExecutor;
-    protected final PostExecutionThread postExecutionThread;
+    private final ThreadExecutor threadExecutor;
+    private final PostExecutionThread postExecutionThread;
     private final CompositeDisposable disposables;
 
     FlowableUseCase(ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
@@ -61,15 +61,10 @@ public abstract class FlowableUseCase<T, Params> {
         }
     }
 
-    public boolean isDisposed() {
-        return disposables.size() == 0 || disposables.isDisposed();
-    }
-
     /**
      * Dispose from current {@link CompositeDisposable}.
      */
-    protected void addDisposable(Disposable disposable) {
+    private void addDisposable(Disposable disposable) {
         disposables.add(disposable);
     }
 }
-

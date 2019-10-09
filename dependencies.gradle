@@ -9,7 +9,11 @@ ext {
     utilcodeVer = "1.5.1"
     materialDialogVersion = "0.9.6.0"
     butterKnifeVersion = "10.0.0"
+    rxBindingVersion = "2.0.0"
     barcodeZXingVer = "1.9.8"
     rxPermissionVer = "0.9.4"
     sdpVer = "1.0.4"
+    circleimageviewVer = "2.1.0"
+    swipeRevealVer = "1.4.1"
+    materialDateTimePickerVer = "3.5.1"
 }

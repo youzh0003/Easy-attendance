@@ -1,23 +1,33 @@
 package com.zhiyong.easy_attendance.utils;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.core.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.snackbar.Snackbar;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.zhiyong.easy_attendance.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 import java.util.UUID;
 
 public class AppUtils {
@@ -114,6 +124,56 @@ public class AppUtils {
                 .setAction(context.getString(actionStringId), listener);
         snackbar.getView().setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
         snackbar.show();
+    }
+
+    public interface CalendarCallback {
+        void onStringReturn(String stringReturn);
+    }
+
+    public static void showCalendar(Activity activity, String dateInput, CalendarCallback callbackCalendar) {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DateUtils.PATTERN_REPORT, Locale.US);
+        DatePickerDialog.OnDateSetListener callback = (view, year, monthOfYear, dayOfMonth) -> {
+            cal.set(year, monthOfYear, dayOfMonth);
+            String date = year + "-" + (monthOfYear + 1) + "-" + (dayOfMonth);
+            try {
+                Date dateReturn = dateFormat.parse(date);
+                if (dateReturn.after(new Date())) {
+                    dateReturn = new Date();
+                }
+                callbackCalendar.onStringReturn(dateFormat.format(dateReturn));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        };
+
+        if (AppUtils.validateString(dateInput)) {
+            try {
+                Date dateReturn = dateFormat.parse(dateInput);
+                cal.setTime(dateReturn);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        String strDate = dateFormat.format(cal.getTime());
+        String s = strDate;
+        String strArrtmp[] = s.split("-");
+        int day = Integer.parseInt(strArrtmp[2]);
+        int month = Integer.parseInt(strArrtmp[1]) - 1;
+        int year = Integer.parseInt(strArrtmp[0]);
+
+        DatePickerDialog pickerDialog = DatePickerDialog.newInstance(callback, year, month, day);
+        pickerDialog.setMaxDate(Calendar.getInstance());
+        pickerDialog.show(activity.getFragmentManager(), "");
+    }
+
+    public static Dialog initDialog(Dialog dialog, int layout, Activity activity) {
+        dialog = new Dialog(activity);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(layout);
+        dialog.setCanceledOnTouchOutside(true);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        return dialog;
     }
 }
 
