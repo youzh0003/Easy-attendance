@@ -27,9 +27,9 @@ import com.zhiyong.easy_attendance.ui.setting.user.UserView;
 import com.zhiyong.easy_attendance.utils.AppUtils;
 import com.zhiyong.easy_attendance.utils.DateUtils;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.inject.Inject;
 
@@ -88,7 +88,7 @@ public class QRCodeRecognitionFragment extends BaseDialogFragment implements QRC
         Bundle arguments = getArguments();
         if (arguments != null) {
         }
-        timezone = Calendar.getInstance().getTimeZone().toString();
+        timezone = TimeZone.getDefault().getDisplayName();
     }
 
     @Override

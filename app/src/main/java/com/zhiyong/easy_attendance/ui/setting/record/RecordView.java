@@ -32,6 +32,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.inject.Inject;
 
@@ -87,7 +88,7 @@ public class RecordView extends BaseDialogFragment implements RecordMvpView {
         Bundle arguments = getArguments();
         if (arguments != null) {
         }
-        timezone = Calendar.getInstance().getTimeZone().toString();
+        timezone = TimeZone.getDefault().getDisplayName();
     }
 
     @Override
