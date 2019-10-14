@@ -22,10 +22,10 @@
                 style="@style/NormalTextSize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_rectangle"
+                android:background="@drawable/border_rectangle_states"
                 android:padding="@dimen/_3sdp"
                 android:layout_centerVertical="true"
-                android:drawableStart="@drawable/ic_event_note_black_24dp"/>
+                android:drawableStart="@drawable/ic_event_note_black_24dp_states"/>
             <ImageView
                 android:id="@+id/iv_clear"
                 android:layout_width="wrap_content"
@@ -43,8 +43,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
-            android:background="@drawable/border_rectangle"
+            android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp_states"
+            android:background="@drawable/border_rectangle_states"
             android:hint="@string/group"
             android:layout_gravity="center_vertical"
             android:padding="@dimen/_3sdp"/>

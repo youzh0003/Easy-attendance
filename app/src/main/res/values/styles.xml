@@ -46,8 +46,8 @@
     </style>
 
     <style name="ToolbarHeaderIcon">
-        <item name="android:layout_width">@dimen/_24sdp</item>
-        <item name="android:layout_height">@dimen/_24sdp</item>
+        <item name="android:layout_width">@dimen/_30sdp</item>
+        <item name="android:layout_height">@dimen/_30sdp</item>
     </style>
 
     <style name="ToolbarHeaderText">

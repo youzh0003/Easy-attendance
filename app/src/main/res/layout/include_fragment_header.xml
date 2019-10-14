@@ -12,7 +12,7 @@
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_arrow_back_black_24dp" />
+        android:src="@drawable/ic_arrow_back_black_24dp_states" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -30,5 +30,5 @@
         style="@style/ToolbarHeaderIcon"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/ic_print_black_24dp" />
+        android:src="@drawable/ic_print_black_24dp_states" />
 </RelativeLayout>

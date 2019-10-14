@@ -2,13 +2,14 @@ package com.zhiyong.easy_attendance.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 
 import com.zhiyong.easy_attendance.MyApplication;
 import com.zhiyong.easy_attendance.R;
@@ -41,11 +42,11 @@ public class BaseFragment extends Fragment {
 
 
     public void replaceFragment(Fragment fragment, int containerId) {
-        replaceFragment(fragment, containerId, 0, true);
+        replaceFragment(fragment, containerId, IN_RIGHT_OUT_LEFT, true);
     }
 
     public void replaceFragment(Fragment fragment, int containerId, boolean addToBackStack) {
-        replaceFragment(fragment, containerId, 0, addToBackStack);
+        replaceFragment(fragment, containerId, IN_RIGHT_OUT_LEFT, addToBackStack);
     }
 
     public void replaceFragment(Fragment fragment, int containerId, int customAnimations, boolean addToBackStack) {
@@ -60,9 +61,9 @@ public class BaseFragment extends Fragment {
 //                    fragmentManager.popBackStackImmediate();
 //                }
                 if (customAnimations == IN_RIGHT_OUT_LEFT) {
-                    transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
+                    transaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left, R.anim.slide_in_left, R.anim.slide_out_right);
                 } else if (customAnimations == IN_LEFT_OUT_RIGHT) {
-                    transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+                    transaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right, R.anim.slide_in_left, R.anim.slide_out_right);
                 }
                 transaction.replace(containerId, fragment, fragment.getClass().getSimpleName());
                 if (addToBackStack) {
